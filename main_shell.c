@@ -1,4 +1,10 @@
 #include "shell.h"
+/**
+  * main - check code
+  *
+  *
+  * Return: 0 always
+  */
 
 int main(void)
 {
@@ -7,7 +13,7 @@ int main(void)
 		char *str;
 		char *split;
 
-		printf("$ ");
+		prompt();
 		str = input_string();
 		split = split_line(str);
 

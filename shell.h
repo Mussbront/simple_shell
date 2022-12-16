@@ -17,8 +17,7 @@
 
 char *input_string(void);
 char *split_line(char *string);
-
-
+int *prompt(void);
 
 
 #endif
