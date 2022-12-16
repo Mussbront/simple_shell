@@ -15,8 +15,8 @@
 
 /* PROTOTYPES */
 
-char* input_string(void);
-char* split_line(char *string);
+char *input_string(void);
+char *split_line(char *string);
 
 
 

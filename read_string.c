@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <string.h>
-char* input_string(void);
+#include "shell.h"
 /**
   * input_string - read string from stdin
   * @str: array pointer to string
@@ -13,7 +6,7 @@ char* input_string(void);
   * Return: str
   *
   */
-char* input_string(void)
+char *input_string(void)
 {
 	char *str = NULL;
 	size_t string_len = 10;

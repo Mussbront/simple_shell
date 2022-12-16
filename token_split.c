@@ -5,7 +5,7 @@
   * Return: split
   *
   */
-char* split_line(char *str)
+char *split_line(char *str)
 {
 	char delim[] = " \n\t\r";
 	char *split = strtok(str, delim);
