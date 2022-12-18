@@ -16,7 +16,7 @@
 /* PROTOTYPES */
 
 char *input_string(void);
-char **split_line(char *string);
+char **split_line(char *str);
 int *prompt(void);
 
 
