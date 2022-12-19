@@ -11,15 +11,15 @@ int main(void)
 	while (true)
 	{
 		char *str;
-		char *split;
+		char **splits;
 
 		prompt();
 		str = input_string();
-		split = split_line(str);
-
+		splits = split_line(str);
+		/* execve here */
 
 		free(str);
-		free(split);
+		free(splits);
 	}
 	return (0);
 }
