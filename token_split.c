@@ -7,7 +7,7 @@
   */
 char **split_line(char *str)
 {
-	int len = 32;
+	int len = 1024;
 	char **splits = malloc(sizeof(char *) * len);
 
 
@@ -19,7 +19,6 @@ char **split_line(char *str)
 		splits[0] = split;
 		split = strtok(NULL, delim);
 	}
-
 
 	return (splits);
 

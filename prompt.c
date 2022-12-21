@@ -6,8 +6,7 @@
   */
 int *prompt(void)
 {
-	write(0, "$ ", 3);
-
+	write(0, "NewShell$ ", 11);
 	return (0);
 }
 

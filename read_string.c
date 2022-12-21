@@ -10,7 +10,7 @@ char *input_string(void)
 	char *str;
 	size_t string_len = 10;
 
-	str = malloc(sizeof(char) * string_len);
+	str = NULL;
 
 	getline(&str, &string_len, stdin);
 
