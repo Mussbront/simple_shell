@@ -7,25 +7,31 @@
 int _exec(char **args)
 {
 	int status;
-	pid_t child = fork();
 
-	if (child == 0)
+	pid_t child_pid = fork();
+
+	if (child_pid == 0)
 	{
-		if (execve(args[0], args, NULL) == -1)
+		if (args != NULL)
 		{
+			execve(args[0], args, NULL);
 			perror("Jsh");
+			exit(1);
 		}
 	}
-	else if (child > 0)
+
+	close(child_pid);
+	if (child_pid != 0)
 	{
-
-		waitpid(child, &status, WUNTRACED);
+		do {
+			waitpid(child_pid, &status, WUNTRACED);
+		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
-
 	else
 	{
+		wait(NULL);
 		perror("Jsh");
 	}
-
 	return (0);
 }
+
