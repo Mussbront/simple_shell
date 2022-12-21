@@ -16,7 +16,7 @@ int main(void)
 		prompt();
 		str = input_string();
 		splits = split_line(str);
-		/* execve here */
+		_exec(splits);
 
 		free(str);
 		free(splits);
