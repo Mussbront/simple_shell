@@ -1,14 +1,14 @@
 #include "shell.h"
 /**
   * split_line - tokenize input
-  * @string: pointer to string
+  * @str: pointer to string
   * Return: split
   *
   */
-#define BUF_LEN 1024
 char **split_line(char *str)
 {
-	char **splits = malloc(sizeof(char *) * BUF_LEN);
+	int len = 32;
+	char **splits = malloc(sizeof(char *) * len);
 
 
 	char delim[] = " \n\t\r";

@@ -1,7 +1,6 @@
 #include "shell.h"
 /**
   * input_string - read string from stdin
-  * @str: array pointer to string
   *
   * Return: str
   *
