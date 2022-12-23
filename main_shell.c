@@ -10,7 +10,7 @@
 int main(int argc, char *argv[], char *env[])
 {
 	data_of_program data_struct = {NULL}, *data = &data_struct;
-	char *prompt = "$";
+	char *prompt = "";
 
 	inic_data(data, argc, argv, env);
 
