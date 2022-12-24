@@ -80,7 +80,7 @@ void tokenize(data_of_program *data);
 /* Create a pointer to part of a string */
 char *_strtok(char *line, char *delim);
 /* Execute a command with its entire path */
-int exec(data_of_program *data);
+int _exec(char **args);
 /* executes builtin if matched */
 int builtins_list(data_of_program *data);
 /* Creates aaray of path directories */
