@@ -1,25 +1,43 @@
 #include "shell.h"
 /**
-  * split_line - tokenize input
-  * @str: pointer to string
-  * Return: split
+  * _strtok - separates strings into tokens
+  * @line: It´s pointer to array we receive in getline
+  * @delim: characters to mark off string in parts
+  * Return: pointer to the created toke
   *
   */
-char **split_line(char *str)
+char *_strtok(char *line, char *delim)
 {
-	int len = 1024;
-	char **splits = malloc(sizeof(char *) * len);
+	int j;
+	static char *str;
+	char *copystr;
 
-
-	char delim[] = " \n\t\r";
-	char *split = strtok(str, delim);
-
-	while (split != NULL)
+	if (line != NULL)
+		str = line;
+	for (; *str != '\0'; str++)
 	{
-		splits[0] = split;
-		split = strtok(NULL, delim);
+		for (j = 0; delim[j] != '\0'; j++)
+		{
+			if (*str == delim[j])
+			break;
+		}
+		if (delim[j] == '\0')
+			break;
 	}
-
-	return (splits);
-
+	copystr = str;
+	if (*copystr == '\0')
+		return (NULL);
+	for (; *str != '\0'; str++)
+	{
+		for (j = 0; delim[j] != '\0'; j++)
+		{
+			if (*str == delim[j])
+			{
+				*str = '\0';
+				str++;
+				return (copystr);
+			}
+		}
+	}
+	return (copystr);
 }
