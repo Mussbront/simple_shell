@@ -1,5 +1,5 @@
-#ifndef HELPERS_H
-#define HELPERS_H
+#ifndef MACROS_H
+#define MACROS_H
 
 /* Prompt to print */
 #define PROMPT_MSG "$"
