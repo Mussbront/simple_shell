@@ -86,6 +86,6 @@ int builtins_list(data_of_program *data);
 /* Creates aaray of path directories */
 char **tokenize_path(data_of_program *data);
 /* Search for program in path */
-int find_program(data_of_program *data);
+int find_prog(data_of_program *data);
 
 #endif
