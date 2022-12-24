@@ -27,7 +27,7 @@ int main(int argc, char *argv[], char *env[])
 }
 
 /**
-  * handle_ctrl_c - print the prompt in a new line
+  * ctrl_c - print the prompt in a new line
   * when the signal SIGINT (ctrl + c) is sent to the program
   * @UNUSED: option of the prototype
   */
@@ -52,10 +52,10 @@ void inic_data(data_of_program *data, int argc, char *argv[], char **env)
 	data->input_line = NULL;
 	data->command_name = NULL;
 	data->exec_counter = 0;
-	//defining file descriptor to be read
+	/* defining file descriptor to be read */
 	if (argc == 1)
 		data->file_descriptor = STDIN_FILENO;
-	else 
+	else
 	{
 		data->file_descriptor = open(argv[1], O_RDONLY);
 		if (data->file_descriptor == -1)
@@ -102,7 +102,7 @@ void prmpt(char *prompt, data_of_program *data)
 		if (error_code == EOF)
 		{
 			free_all_data(data);
-			exit(errno); // if EOF is the fisrt Char of string, exit
+			exit(errno); /* if EOF is the fisrt Char of string, exit */
 		}
 		if (string_len >= 1)
 		{
@@ -110,7 +110,7 @@ void prmpt(char *prompt, data_of_program *data)
 			expand_variables(data);
 			tokenize(data);
 			if (data->tokens[0])
-			{ //if text is given to prompt, execute
+			{ /* if text is given to prompt, execute */
 				error_code = execute(data);
 				if (error_code != 0)
 					_print_error(error_code, data);
