@@ -74,5 +74,4 @@ char **tokenize_path(data_of_program *data);
 //Search for program in path
 int find_program(data_of_program *data);
 
-
 #endif
